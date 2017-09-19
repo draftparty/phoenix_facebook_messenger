@@ -5,7 +5,7 @@ defmodule FacebookMessenger.Phoenix.Mixfile do
     [
       app: :phoenix_facebook_messenger,
       name: "PhoenixFacebookMessenger",
-      source_url: "https://github.com/oarrabi/phoenix_facebook_messenger",
+      source_url: "https://github.com/draftparty/phoenix_facebook_messenger",
       version: "0.4.0",
       docs: [ extras: ["README.md"] ],
       elixir: "~> 1.0",
