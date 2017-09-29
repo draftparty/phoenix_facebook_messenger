@@ -21,7 +21,7 @@ defmodule FacebookMessenger.Phoenix.Controller do
           {:ok, challenge} ->
             inform_callback(:challenge_successfull, [params])
             conn = resp(conn, 200, challenge)
-            respond.(conn)
+            respond().(conn)
           _ ->
             inform_callback(:challenge_failed, [params])
             invalid_token(conn, params)
@@ -38,23 +38,23 @@ defmodule FacebookMessenger.Phoenix.Controller do
         @callback_handler.message_received(message)
 
         conn = resp(conn, 200, "")
-        respond.(conn)
+        respond().(conn)
       end
 
       def inform_and_reply(:error, conn) do
         conn = resp(conn, 500, "")
-        respond.(conn)
+        respond().(conn)
       end
 
       defp invalid_token(conn, params) do
         Logger.error("Bad request #{inspect(conn)} with params #{inspect(params)}")
 
         conn = resp(conn, 500, "")
-        respond.(conn)
+        respond().(conn)
       end
 
       defp respond do
-        &responder.respond/1
+        &responder().respond/1
       end
 
       defp responder do
