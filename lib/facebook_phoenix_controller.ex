@@ -6,7 +6,7 @@ defmodule FacebookMessenger.Phoenix.Controller do
   and facebook webhook callbacks
   """
 
-  defmacro __using__(x) do
+  defmacro __using__(_x) do
     quote do
       require Logger
       use Phoenix.Controller

@@ -13,6 +13,6 @@ defmodule FacebookMessenger.Responder.Mock do
   Mock Module responsilbe for responding back to phoenix plug
   """
   def respond(%{request_path: request_path, status: status, resp_body: resp_body}) do
-    send(self, {request_path, status, resp_body})
+    send(self(), {request_path, status, resp_body})
   end
 end
